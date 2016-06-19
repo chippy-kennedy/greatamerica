@@ -1,0 +1,21 @@
+
+$(document).ready(function() {
+	$("#the_id").submit(function(e){
+		e.preventDefault();
+
+		$.ajax({
+			type: "POST",
+			url: "/job",
+			data: JSON.strigify({ name:"DOM"}),
+			dataType: "json",
+			contentType: "application/json",
+			success: function(json){
+				$("#form").hide();
+				$("#yo").show();
+			},
+			error: function(){
+				$("#yo").html("Not Successful")
+			}
+		});
+	});
+});
