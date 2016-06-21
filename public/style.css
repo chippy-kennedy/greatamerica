@@ -7,14 +7,24 @@ div {
 	text-align: center;
 }
 
-
-.titlepane {
-	text-align: center;
-	margin: 40px;
-	font-size: 24pt;
+h1 {
+	font-size: 28pt;
 	font-weight: bold;
 	line-height: 1.2;
-				
+}
+
+h2 {
+	font-size: 38.5px;
+}
+
+p {
+	font-size: 20px;
+}
+
+
+.titlepane {
+	margin: 40px;
+	text-align: center;
 }
 
 .form-group {
@@ -30,4 +40,5 @@ div {
 
 #res-col {
 	text-align: center;
+	margin: 10px 15%;
 }

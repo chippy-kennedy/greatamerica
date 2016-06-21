@@ -5,8 +5,6 @@ require 'json'
 
 set :database_file, 'config/database.yml'
 
-
-
 Tilt.register Tilt::ERBTemplate, 'html.erb'
 
 
@@ -20,8 +18,8 @@ get '/' do
 end
 
 post '/job' do
-	@jobTitle = "Toupe Specialist"
-	@jobDescription = "You will groom the heaad's of carrots everywhere"
+	@jobTitle = Response.first.jobTitle
+	@jobDescription = Response.first.jobDescription 
 	
 	erb :job, :layout => (request.xhr? ? false : :layout)
 end

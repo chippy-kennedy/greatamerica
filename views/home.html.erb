@@ -1,14 +1,14 @@
 <div class="row">
 
-	<div class="col-md-6 titlepane">
+	<div class="col-md-6 titlepane"><h1>
 		When Donald Trump Makes America Great Again, </br>What Will Your New Job Be?
-	</div>
+		</h1></div>
 </div>
 
 <div class="row" id="form-row">
 
 	<!-- Response (Starts Hidden) -->
-	<div class="col-md-8" id="res-col">
+	<div class="col-md-6" id="res-col">
 	
 	</div>
 	
@@ -46,8 +46,7 @@
 				dataType: 'html',
 				success: function(result) {
 					$('#form-col').hide();
-					$('#res-col').html(result + "Hey, Whatup Mr." + $inputs);
-					console.log('OUTPUT: ' + result);
+					$('#res-col').html(result);
 				}
 			});
 		});
