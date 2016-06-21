@@ -5,13 +5,16 @@
 	</div>
 </div>
 
-<div id="yo">
-	
-</div>
+<div class="row" id="form-row">
 
-<div class="row" id="form">
-	<div class="col-md-8 form">
-		<form  id="the_id">
+	<!-- Response (Starts Hidden) -->
+	<div class="col-md-8" id="res-col">
+	
+	</div>
+	
+	<!-- Form (Starts Showing) -->
+	<div class="col-md-8" id="form-col">
+		<form  id="form">
 			<div class="form-group">
 				<input type="name" class="form-control" id="exampleInputName" placeholder="First Name">
 			</div>
@@ -31,8 +34,10 @@
 <script type="text/javascript">
 
 	$(function (){
-		$('form').submit(function(e){
+		$('#form').submit(function(e){
 			e.preventDefault();
+
+			var $inputs = $("input:first").val();
 
 			$.ajax({
 				url:'/job',
@@ -40,9 +45,9 @@
 				data: $(this).serialize(),
 				dataType: 'html',
 				success: function(result) {
-					$('form').hide();
-					$('#yo').html(result);
-					console.log('DATA' + result);
+					$('#form-col').hide();
+					$('#res-col').html(result + "Hey, Whatup Mr." + $inputs);
+					console.log('OUTPUT: ' + result);
 				}
 			});
 		});
