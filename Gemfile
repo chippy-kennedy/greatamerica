@@ -5,12 +5,13 @@ gem "sinatra"
 gem "json"
 
 gem 'sinatra-static-assets'
+gem 'unicorn'
+gem 'rack'
 
 #Gifly Hookup
 gem 'giphy'
 
 #Curb for curl/http heavy lifting
-#gem 'curb' 
 
 # Use ActiveRecord as the ORM
 gem "sinatra-activerecord", '~> 2.0'

@@ -1,0 +1,62 @@
+I, [2016-06-22T15:27:09.285970 #18905]  INFO -- : listening on addr=/tmp/unicorn.greatamerica.sock fd=10
+I, [2016-06-22T15:27:09.286315 #18905]  INFO -- : worker=0 spawning...
+I, [2016-06-22T15:27:09.291837 #18905]  INFO -- : worker=1 spawning...
+I, [2016-06-22T15:27:09.292432 #18905]  INFO -- : master process ready
+I, [2016-06-22T15:27:09.300242 #18908]  INFO -- : worker=0 spawned pid=18908
+I, [2016-06-22T15:27:09.300410 #18908]  INFO -- : Refreshing Gem list
+I, [2016-06-22T15:27:09.301376 #18910]  INFO -- : worker=1 spawned pid=18910
+I, [2016-06-22T15:27:09.301536 #18910]  INFO -- : Refreshing Gem list
+I, [2016-06-22T15:27:10.201602 #18908]  INFO -- : worker=0 ready
+I, [2016-06-22T15:27:10.203395 #18910]  INFO -- : worker=1 ready
+/usr/local/rvm/gems/ruby-2.3.0/gems/unicorn-5.1.0/lib/unicorn/http_server.rb:195:in `pid=': Already running on PID:18905 (or pid=/var/www/greatamerica/pids/unicorn.pid is stale) (ArgumentError)
+	from /usr/local/rvm/gems/ruby-2.3.0/gems/unicorn-5.1.0/lib/unicorn/http_server.rb:127:in `start'
+	from /usr/local/rvm/gems/ruby-2.3.0/gems/unicorn-5.1.0/bin/unicorn:126:in `<top (required)>'
+	from /usr/local/rvm/gems/ruby-2.3.0/bin/unicorn:23:in `load'
+	from /usr/local/rvm/gems/ruby-2.3.0/bin/unicorn:23:in `<main>'
+	from /usr/local/rvm/gems/ruby-2.3.0/bin/ruby_executable_hooks:15:in `eval'
+	from /usr/local/rvm/gems/ruby-2.3.0/bin/ruby_executable_hooks:15:in `<main>'
+/usr/local/rvm/gems/ruby-2.3.0/gems/unicorn-5.1.0/lib/unicorn/http_server.rb:195:in `pid=': Already running on PID:18905 (or pid=/var/www/greatamerica/pids/unicorn.pid is stale) (ArgumentError)
+	from /usr/local/rvm/gems/ruby-2.3.0/gems/unicorn-5.1.0/lib/unicorn/http_server.rb:127:in `start'
+	from /usr/local/rvm/gems/ruby-2.3.0/gems/unicorn-5.1.0/bin/unicorn:126:in `<top (required)>'
+	from /usr/local/rvm/gems/ruby-2.3.0/bin/unicorn:23:in `load'
+	from /usr/local/rvm/gems/ruby-2.3.0/bin/unicorn:23:in `<main>'
+	from /usr/local/rvm/gems/ruby-2.3.0/bin/ruby_executable_hooks:15:in `eval'
+	from /usr/local/rvm/gems/ruby-2.3.0/bin/ruby_executable_hooks:15:in `<main>'
+E, [2016-06-22T15:33:10.056063 #18905] ERROR -- : reaped #<Process::Status: pid 18910 SIGKILL (signal 9)> worker=1
+I, [2016-06-22T15:33:10.056547 #18905]  INFO -- : worker=1 spawning...
+I, [2016-06-22T15:33:10.058067 #19007]  INFO -- : worker=1 spawned pid=19007
+I, [2016-06-22T15:33:10.059529 #19007]  INFO -- : Refreshing Gem list
+I, [2016-06-22T15:33:10.506391 #19007]  INFO -- : worker=1 ready
+I, [2016-06-22T15:33:42.770233 #19035]  INFO -- : unlinking existing socket=/tmp/unicorn.greatamerica.sock
+I, [2016-06-22T15:33:42.770589 #19035]  INFO -- : listening on addr=/tmp/unicorn.greatamerica.sock fd=10
+I, [2016-06-22T15:33:42.770721 #19035]  INFO -- : worker=0 spawning...
+I, [2016-06-22T15:33:42.775875 #19035]  INFO -- : worker=1 spawning...
+I, [2016-06-22T15:33:42.779841 #19035]  INFO -- : master process ready
+I, [2016-06-22T15:33:42.784254 #19038]  INFO -- : worker=0 spawned pid=19038
+I, [2016-06-22T15:33:42.784408 #19038]  INFO -- : Refreshing Gem list
+I, [2016-06-22T15:33:42.792062 #19040]  INFO -- : worker=1 spawned pid=19040
+I, [2016-06-22T15:33:42.792207 #19040]  INFO -- : Refreshing Gem list
+I, [2016-06-22T15:33:43.714864 #19040]  INFO -- : worker=1 ready
+I, [2016-06-22T15:33:43.719565 #19038]  INFO -- : worker=0 ready
+D, [2016-06-22T16:02:13.677687 #19038] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "responses" WHERE "responses"."pending" = ?[0m  [["pending", "f"]]
+73.149.215.181 - - [22/Jun/2016:16:02:13 -0400] "GET / HTTP/1.0" 200 1755 0.0337
+73.149.215.181 - - [22/Jun/2016:16:02:13 -0400] "GET /css/bootstrap-responsive.css HTTP/1.0" 200 22102 0.0024
+73.149.215.181 - - [22/Jun/2016:16:02:13 -0400] "GET /css/bootstrap.css HTTP/1.0" 200 127343 0.0198
+73.149.215.181 - - [22/Jun/2016:16:02:13 -0400] "GET /style.css HTTP/1.0" 200 850 0.0017
+73.149.215.181 - - [22/Jun/2016:16:02:13 -0400] "GET /js/bootstrap.min.js HTTP/1.0" 200 28631 0.0020
+73.149.215.181 - - [22/Jun/2016:16:02:13 -0400] "GET /js/app.js HTTP/1.0" 200 400 0.0018
+73.149.215.181 - - [22/Jun/2016:16:02:14 -0400] "GET /favicon.ico HTTP/1.0" 404 513 0.0021
+D, [2016-06-22T16:02:22.179695 #19040] DEBUG -- :   [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "responses" WHERE "responses"."pending" = ?[0m  [["pending", "f"]]
+73.149.215.181 - - [22/Jun/2016:16:02:22 -0400] "GET / HTTP/1.0" 200 1755 0.0204
+73.149.215.181 - - [22/Jun/2016:16:02:22 -0400] "GET /css/bootstrap.css HTTP/1.0" 200 127343 0.0060
+73.149.215.181 - - [22/Jun/2016:16:02:22 -0400] "GET /css/bootstrap-responsive.css HTTP/1.0" 200 22102 0.0025
+73.149.215.181 - - [22/Jun/2016:16:02:22 -0400] "GET /style.css HTTP/1.0" 200 850 0.0046
+73.149.215.181 - - [22/Jun/2016:16:02:22 -0400] "GET /js/bootstrap.min.js HTTP/1.0" 200 28631 0.0047
+73.149.215.181 - - [22/Jun/2016:16:02:22 -0400] "GET /js/app.js HTTP/1.0" 200 400 0.0030
+73.149.215.181 - - [22/Jun/2016:16:02:22 -0400] "GET /favicon.ico HTTP/1.0" 404 517 0.0020
+D, [2016-06-22T16:03:54.190434 #19038] DEBUG -- :   [1m[35mResponse Load (0.3ms)[0m  SELECT  "responses".* FROM "responses" WHERE "responses"."pending" = ? AND "responses"."id" = ? LIMIT 1  [["pending", "f"], ["id", 4]]
+
+Selection #: 4
+Response:: #<Response:0x0000000164b8f0>
+73.149.215.181 - - [22/Jun/2016:16:03:54 -0400] "POST /job HTTP/1.0" 200 727 0.0166
+73.149.215.181 - - [22/Jun/2016:16:03:54 -0400] "GET /img/giphy_logo.png HTTP/1.0" 200 1427 0.0022

@@ -3,7 +3,6 @@ require 'sinatra/activerecord'
 require 'net/http'
 require 'rubygems'
 require 'json'
-require 'curb'
 
 #--------------------------------------------------
 #Config
@@ -30,52 +29,53 @@ class Response < ActiveRecord::Base
 end
 
 #--------------------------------------------------
-#Routes
-#
-#1. Read the Total # of Jobs in DB
-before '/' do
-	TOTAL_JOBS = Response.where(:pending => false).size
-end
+#Main Class & Routes
+class GreatAmerica < Sinatra::Base
+	#1. Read the Total # of Jobs in DB
+	before '/' do
+		TOTAL_JOBS = Response.where(:pending => false).size
+	end
 
-#2. Load Home Page/Form
-get '/' do
-	erb :home, :format => :layout
-end
+	#2. Load Home Page/Form
+	get '/' do
+		erb :home, :format => :layout
+	end
 
-#3. Match input to matching job id
-post '/job' do
-	sel = 1 + params[:first].sum % TOTAL_JOBS
-	res = Response.where(:pending => false).find_by id: sel
+	#3. Match input to matching job id
+	post '/job' do
+		sel = 1 + params[:first].sum % TOTAL_JOBS
+		res = Response.where(:pending => false).find_by id: sel
 
-	print "\nSelection #: " + sel.to_s + "\n"
-	print "Response:: " + res.to_s + "\n"
+		print "\nSelection #: " + sel.to_s + "\n"
+		print "Response:: " + res.to_s + "\n"
 
-	@jobTitle 			= res.jobTitle
-	@gif 						= res.gif
-	@jobDescription = res.jobDescription 
-	
-	erb :job, :layout => (request.xhr? ? false : :layout)
-end
+		@jobTitle 			= res.jobTitle
+		@gif 						= res.gif
+		@jobDescription = res.jobDescription 
+		
+		erb :job, :layout => (request.xhr? ? false : :layout)
+	end
 
-#4. Optional Custom Responses
-get '/add' do
-	erb :add, :format => :layout
-end
+	#4. Optional Custom Responses
+	get '/add' do
+		erb :add, :format => :layout
+	end
 
-post '/add' do
-	gif_link = params[:gif]
-	r = Response.new
-	r.jobTitle = params[:title]
-	r.jobDescription = params[:description]
-	r.created_at = Time.now
-	r.updated_at = Time.now
-	r.gif = if (gif_link.nil? == true) then r.setRandomGifyLink else gif_link end
-	r.pending = true
-	r.save!
-	redirect '/thanks'
-end
+	post '/add' do
+		gif_link = params[:gif]
+		r = Response.new
+		r.jobTitle = params[:title]
+		r.jobDescription = params[:description]
+		r.created_at = Time.now
+		r.updated_at = Time.now
+		r.gif = if (gif_link.nil? == true) then r.setRandomGifyLink else gif_link end
+		r.pending = true
+		r.save!
+		redirect '/thanks'
+	end
 
-#5. Submit Response Redirect
-get '/thanks' do
-	erb :thanks, :format => :layout
+	#5. Submit Response Redirect
+	get '/thanks' do
+		erb :thanks, :format => :layout
+	end
 end
