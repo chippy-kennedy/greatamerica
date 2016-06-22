@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160621220105) do
+ActiveRecord::Schema.define(version: 20160622015002) do
 
   create_table "responses", force: :cascade do |t|
     t.string   "jobTitle"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20160621220105) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "pending",        default: false
+    t.string   "gif",            default: "https://media.giphy.com/media/fXQd4ltb2My64/giphy.gif"
   end
 
 end
