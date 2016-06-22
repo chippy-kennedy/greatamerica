@@ -1,6 +1,12 @@
 //Custom Style
 
+@media (min-width: 768px) {
+	 h1 { font-size: 28px;} 
+}
+
+
 div {
+	text-align: center;
 	.titlepane {
 		text-align: center;
 	}
@@ -8,17 +14,22 @@ div {
 }
 
 h1 {
-	font-size: 28pt;
-	font-weight: bold;
+	font-family: 'Old Standard TT', serif;
+	font-size: 46pt;
+	font-weight: 400;
 	line-height: 1.2;
 }
 
 h2 {
+	font-family: 'Montserrat', sans-serif;
 	font-size: 38.5px;
+	line-height: 1.1;
 }
 
 p {
+	font-family: 'Montserrat', sans-serif;
 	font-size: 20px;
+	line-height: 30px;
 }
 
 
@@ -33,9 +44,15 @@ p {
 }
 .form-control, .btn{
 	text-align: center;
-	font-size: 20pt;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 20px;
 	width: 450px;
 	height: 50px;
+}
+
+a.btn {
+	width: 280px;
+	margin: 0px 15px;
 }
 
 #res-col {

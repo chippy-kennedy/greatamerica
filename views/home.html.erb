@@ -1,10 +1,3 @@
-<div class="row">
-
-	<div class="col-md-6 titlepane"><h1>
-		When Donald Trump Makes America Great Again, </br>What Will Your New Job Be?
-		</h1></div>
-</div>
-
 <div class="row" id="form-row">
 
 	<!-- Response (Starts Hidden) -->
@@ -16,13 +9,13 @@
 	<div class="col-md-8" id="form-col">
 		<form  id="form">
 			<div class="form-group">
-				<input type="name" class="form-control" id="exampleInputName" placeholder="First Name">
+				<input type="name" name="first" class="form-control" placeholder="First Name" required>
 			</div>
 			<div class="form-group">
-				<input type="name" class="form-control" id="exampleInputName" placeholder="Last Name">
+				<input type="name" name="last" class="form-control" placeholder="Last Name" required>
 			</div>
 			<div class="form-group">
-				<input type="name" class="form-control" id="exampleInputText" placeholder="Current Occupation">
+				<input type="name" name="occupation" class="form-control" placeholder="Current Occupation" required>
 			</div>
 			<div class="form-group">
 				<button type="submit" class="btn btn-default">Let's Make America Great Again!</button>
@@ -30,26 +23,3 @@
 		</form>
 	</div>
 </div>
-
-<script type="text/javascript">
-
-	$(function (){
-		$('#form').submit(function(e){
-			e.preventDefault();
-
-			var $inputs = $("input:first").val();
-
-			$.ajax({
-				url:'/job',
-				type: 'POST',
-				data: $(this).serialize(),
-				dataType: 'html',
-				success: function(result) {
-					$('#form-col').hide();
-					$('#res-col').html(result);
-				}
-			});
-		});
-	});
-
-</script>
