@@ -4,6 +4,9 @@ require 'net/http'
 require 'rubygems'
 require 'json'
 
+#Development
+require 'pry'
+
 #--------------------------------------------------
 #Config
 set :database_file, 'config/database.yml'
@@ -43,7 +46,7 @@ class GreatAmerica < Sinatra::Base
 
 	#3. Match input to matching job id
 	post '/job' do
-		sel = 1 + params[:first].sum % TOTAL_JOBS
+		sel = 1 + (params[:name].sum + params[:occupation].sum) % TOTAL_JOBS
 		res = Response.where(:pending => false).find_by id: sel
 
 		print "\nSelection #: " + sel.to_s + "\n"
