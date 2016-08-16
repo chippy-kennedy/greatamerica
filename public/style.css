@@ -59,6 +59,12 @@ p {
 a.btn {
 	width: 280px;
 	margin: 15px 15px;
+	padding-top: 30px;
+	font-size: 24px;
+}
+
+.btn-share{
+	//SHARE LINKS
 }
 
 #res-col {

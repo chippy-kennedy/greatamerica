@@ -1,30 +1,25 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<!-- Styles -->
-<link href="/css/bootstrap.css" rel="stylesheet">
-<link href="/css/bootstrap-responsive.css" rel="stylesheet">
-<link href='https://fonts.googleapis.com/css?family=Old+Standard+TT:400,700' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
-<link href="/style.css" rel="stylesheet">
-<!-- Facebook OpenGraph Sharing -->
-<meta property="og:url"                content="jobsinthegreat.us" />
-<meta property="og:type"               content="article" />
-<meta property="og:title"              content="Donald Trump's Jobsite" />
-<meta property="og:description"        content="What will your new job be in the new Great America?" />
-<meta property="og:image"              content="https://media.giphy.com/media/SNQmw0s9BDRxS/giphy.gif" />
-<meta property="fb:app_id"             content="182285005518860" />
+	<!-- Styles -->
+
+	<link href="/css/bootstrap.css" rel="stylesheet">
+	<link href="/css/bootstrap-responsive.css" rel="stylesheet">
+	<link href='https://fonts.googleapis.com/css?family=Old+Standard+TT:400,700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+	<link href="/style.css" rel="stylesheet">
+
+	<!-- Facebook OpenGraph Sharing -->
+	<meta property="og:url"                content="http://jobsinthegreat.us/" />
+	<meta property="og:type"               content="website" />
+	<meta property="og:title"              content="Donald Trump's Jobsite" />
+	<meta property="og:description"        content="What will your new job be in the new Great America?" />
+	<meta property="og:image"              content="https://media.giphy.com/media/SNQmw0s9BDRxS/giphy.gif" />
+	<meta property="fb:app_id"             content="182285005518860" />
+
 </head>
 
 <body>
-
-
-<!-- jQuery & Bootstrap.js -->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/jquery-1.7.1.min.js"><\/script>')</script>
-<script src="/js/bootstrap.min.js"></script>
-<script src="/js/app.js"></script>
-<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
 
 <div class="row">
 	<div class="col-md-6 titlepane"><h1>
@@ -35,4 +30,22 @@
 	<%= yield %>
 
 </body>
+
+<!-- jQuery & Bootstrap.js -->
+	<script   src="https://code.jquery.com/jquery-3.1.0.slim.js"   integrity="sha256-L6ppAjL6jgtRmfiuigeEE5AwNI2pH/X9IBbPyanJeZw="   crossorigin="anonymous"></script>
+	<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/jquery-1.7.1.min.js"><\/script>')</script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/app.js"></script>
+
+<!-- Facebook Share API -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+			  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7&appId=182285005518860";
+				  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 </html>
